@@ -7,7 +7,7 @@ def initialize_log(self):
     try:
         path = os.getcwd()
         os.mkdir(path + '/' + self.experiment_name)
-    except FileExistsError:
+    except OSError:
         pass
 
     self._experiment_id = time.strftime('%D%H%M%S').replace('/', '')
