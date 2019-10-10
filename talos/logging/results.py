@@ -18,7 +18,8 @@ def run_round_results(self, out):
         _round_result_out.append(out.history[key][-1])
 
     # record the round hyper-parameters
-    for key in self.round_params.keys():
+    for i in range(-len(self.round_params), 0):
+        key = self.result[0][i]
         _round_result_out.append(self.round_params[key])
 
     return _round_result_out
